@@ -1,4 +1,4 @@
-angular.module('airbnb', [])
+angular.module('app.routes', [])
 
 .config(AppRoutes);
 

@@ -1,7 +1,7 @@
 angular.module('airbnb',
   [
     'ngStamplay',
-    'ui-router',
+    'ui.router',
     'app.routes',
     'ui.bootstrap',
     'app.authenticate',
@@ -11,7 +11,7 @@ angular.module('airbnb',
     'app.profile',
     'app.room',
     'UserService',
-    'BookService',
+    'BookingService',
     'RoomService'
   ])
 
