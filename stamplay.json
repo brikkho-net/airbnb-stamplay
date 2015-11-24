@@ -1,0 +1,10 @@
+{
+  "appId": "airbnb",
+  "apiKey": "6e08f24fbdaf2a203d970cb8b22954d2944b90b18172686afcabcefdbe68fd86",
+  "public": "./",
+  "ignore": [
+    "stamplay.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

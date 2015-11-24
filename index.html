@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Airbnb</title>
+
+    <base href="/">
+
+    <link rel="stylesheet" href="./bower_components/bootswatch/cerulean/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="./bower_components/stamplay-js-sdk/dist/stamplay.min.js"></script>
+    <script>
+        Stamplay.init('airbnb');
+    </script>
+
+    <!-- load our other JS dependencies -->
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-stamplay/angular-stamplay.js"></script>
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!-- load our angular components -->
+    <script src="./app/components/home/home.js"></script>
+    <script src="./app/components/room/room.js"></script>
+    <script src="./app/components/booking/booking.js"></script>
+    <script src="./app/components/profile/profile.js"></script>
+    <script src="./app/components/admin/admin.js"></script>
+    <script src="./app/components/authenticate/authenticate.js"></script>
+
+    <!-- load our angular services -->
+    <script src="./app/shared/BookingService.js"></script>
+    <script src="./app/shared/UserService.js"></script>
+    <script src="./app/shared/RoomService.js"></script>
+
+    <!-- load our core angular app -->
+    <script src="./app/app.routes.js"></script>
+    <script src="./app/app.js"></script>
+
+
+
+</head>
+<body>
+
+<header>
+    <nav id="main-nav" class="navbar">
+    <div class="container">
+
+        <!-- site logo -->
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">
+                <span class="glyphicon glyphicon-heart-empty"></span>
+                Shop City
+            </a>
+        </div>
+
+        <!-- search form -->
+        <form class="navbar-form navbar-left">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        <!-- logged in navigation -->
+        <!-- todo: check for logged in user -->
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Admin</a></li>
+            <li><a href="#">Purchases</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+
+        <!-- not logged in navigation -->
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Sign in</a></li>
+        </ul>
+    </div>
+    </nav>
+</header>
+
+<!-- ui-router will inject our component views here -->
+<main class="container">
+    <div ui-view></div>
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center">
+    © 2015 Shop City
+</footer>
+
+
+    
+</body>
+</html>
