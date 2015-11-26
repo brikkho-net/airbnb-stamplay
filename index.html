@@ -8,7 +8,8 @@
 
     <link rel="stylesheet" href="./bower_components/bootswatch/cerulean/bootstrap.min.css">
     <link rel="stylesheet" href="./bower_components/angular-bootstrap/ui-bootstrap-csp.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <script src="./bower_components/stamplay-js-sdk/dist/stamplay.min.js"></script>
     <script>
@@ -25,6 +26,7 @@
     <!-- load our angular components -->
     <script src="./app/components/home/home.js"></script>
     <script src="./app/components/room/room.js"></script>
+    <script src="./app/components/nav/nav.js"></script>
     <script src="./app/components/booking/booking.js"></script>
     <script src="./app/components/profile/profile.js"></script>
     <script src="./app/components/admin/admin.js"></script>
@@ -42,57 +44,17 @@
 
 
 </head>
-<body ng-app="airbnb" ng-controller="MainCtrl as main">
+<body ng-app="airbnb">
 
-<header>
-    <nav id="main-nav" class="navbar">
-    <div class="container">
+  <div ui-view name="nav"></div>
 
-        <!-- site logo -->
-        <div class="navbar-header">
-            <a href="#" class="navbar-brand">
-                <span class="glyphicon glyphicon-heart-empty"></span>
-                Shop City
-            </a>
-        </div>
+  <div>
+    <div ui-view name="content"></div>
+  </div>
 
-        <!-- search form -->
-        <form class="navbar-form navbar-left">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-
-        <!-- logged in navigation -->
-        <!-- todo: check for logged in user -->
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Admin</a></li>
-            <li><a href="#">Purchases</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Logout</a></li>
-        </ul>
-
-        <!-- not logged in navigation -->
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Sign in</a></li>
-        </ul>
-    </div>
-    </nav>
-</header>
-
-<!-- ui-router will inject our component views here -->
-<main class="container">
-    <div ui-view></div>
-</main>
-
-<!-- FOOTER -->
-<footer class="text-center">
-    © 2015 Shop City
-</footer>
-
-
+<!--   <footer class="text-center">
+    Airbnb
+</footer> -->
 
 </body>
 </html>
