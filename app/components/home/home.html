@@ -1,31 +1,18 @@
 <div class="flex-row nav-hero">
   <div class="flex-column nav-hero-column">
     <div class="flex-row">
-      
+
       <div class="flex-row flex-grow nav-header">
         <div class="flex-row flex-grow">
           <div class="logo-home-container"><img ng-src="../../img/airbnb-logo.png" alt="airbnb-logo" class="logo-home"></div>
         </div>
         <div class="flex-row nav-objects">
 
-<!--           <div class="flex-column">
-            <div class="flex-row">
-              <div class="flex-column nav-title">Host</div>
-              <div class="flex-column"><i class="nav-icon ion-ios-home-outline"></i></div>
-            </div>
-          </div> -->
-
           <div class="flex-column">
             <div class="flex-row flex-justify-center">
               <div class="home-host-button">Become a Host</div>
             </div>
-          </div>          
-
-
-
-
-
-
+          </div>
 
           <div class="flex-column">
             <div class="flex-row">
@@ -53,7 +40,7 @@
     </div>
 
     <div class="flex-row flex-justify-center middle-container">
-      
+
       <div class="flex-column">
         <div class="flex-row flex-justify-center nav-welcome">welcome home</div>
         <div class="flex-row flex-justify-center nav-rental">Rent unique places to stay from local hosts in 190+ countries.</div>
@@ -62,26 +49,51 @@
         </div>
       </div>
 
-    </div>  
+    </div>
 
     <div class="flex-row flex-justify-center date-container">
         <div class="">
             <p class="input-group">
               <input ng-focus="openLocationSearch($event)" placeholder="Where do you want to go?" type="text" class="form-control location-search-input"  />
             </p>
-        </div>  
-        <div class="">
+        </div>
+        <div>
             <p class="input-group">
               <input ng-focus="openCheckIn($event)" placeholder="Check In" type="text" class="form-control" show-weeks="false" uib-datepicker-popup="{{format}}" ng-model="dtCheckIn" show-button-bar="false" is-open="status.openedCheckIn" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
             </p>
-        </div>  
-        <div class="">
+        </div>
+        <div>
             <p class="input-group">
               <input ng-focus="openCheckOut($event)" placeholder="Check Out" type="text" class="form-control" show-weeks="false" uib-datepicker-popup="{{format}}" ng-model="dtCheckOut" show-button-bar="false" is-open="status.openedCheckOut" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
             </p>
-        </div>  
+        </div>
 
-    </div>        
+        <div>
+          <select>
+              <option>1 Guest</option>
+              <option>2 Guests</option>
+              <option>3 Guests</option>
+              <option>4 Guests</option>
+              <option>5 Guests</option>
+              <option>6 Guests</option>
+              <option>7 Guests</option>
+              <option>8 Guests</option>
+              <option>9 Guests</option>
+              <option>10 Guests</option>
+              <option>11 Guests</option>
+              <option>12 Guests</option>
+              <option>13 Guests</option>
+              <option>14 Guests</option>
+              <option>15 Guests</option>
+              <option>16+ Guests</option>
+          </select>
+        </div>
+
+        <div class="">
+          <div class="home-search-button">search</div>
+        </div>
+
+
+    </div>
   </div>
 </div>
-

@@ -7599,7 +7599,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position'])
   }]);
 
 /* Deprecated typeahead below */
-  
+
 angular.module('ui.bootstrap.typeahead')
   .value('$typeaheadSuppressWarning', false)
   .service('typeaheadParser', ['$parse', 'uibTypeaheadParser', '$log', '$typeaheadSuppressWarning', function($parse, uibTypeaheadParser, $log, $typeaheadSuppressWarning) {
@@ -8029,7 +8029,7 @@ angular.module('ui.bootstrap.typeahead')
       }
     };
   }])
-  
+
   .directive('typeaheadPopup', ['$typeaheadSuppressWarning', '$log', function($typeaheadSuppressWarning, $log) {
     return {
       scope: {
@@ -8045,7 +8045,7 @@ angular.module('ui.bootstrap.typeahead')
         return attrs.popupTemplateUrl || 'template/typeahead/typeahead-popup.html';
       },
       link: function(scope, element, attrs) {
-        
+
         if (!$typeaheadSuppressWarning) {
           $log.warn('typeahead-popup is now deprecated. Use uib-typeahead-popup instead.');
         }
@@ -8069,7 +8069,7 @@ angular.module('ui.bootstrap.typeahead')
       }
     };
   }])
-  
+
   .directive('typeaheadMatch', ['$templateRequest', '$compile', '$parse', '$typeaheadSuppressWarning', '$log', function($templateRequest, $compile, $parse, $typeaheadSuppressWarning, $log) {
     return {
       restrict: 'EA',
@@ -8092,7 +8092,7 @@ angular.module('ui.bootstrap.typeahead')
       }
     };
   }])
-  
+
   .filter('typeaheadHighlight', ['$sce', '$injector', '$log', '$typeaheadSuppressWarning', function($sce, $injector, $log, $typeaheadSuppressWarning) {
     var isSanitizePresent;
     isSanitizePresent = $injector.has('$sanitize');
@@ -8200,7 +8200,7 @@ angular.module("template/datepicker/day.html", []).run(["$templateCache", functi
     "  <thead>\n" +
     "    <tr>\n" +
     "      <th><button type=\"button\" class=\"pull-left\" ng-click=\"move(-1)\" tabindex=\"-1\"><i class=\"glyphicon glyphicon-chevron-left\"></i></button></th>\n" +
-    "      <th colspan=\"{{::5 + showWeeks}}\"><button id=\"{{::uniqueId}}-title\" role=\"heading\" aria-live=\"assertive\" aria-atomic=\"true\" type=\"button\" ng-click=\"toggleMode()\" ng-disabled=\"datepickerMode === maxMode\" tabindex=\"-1\" style=\"width:100%;\"><strong>{{title}}</strong></button></th>\n" +
+    "      <th colspan=\"{{::5 + showWeeks}}\"><button id=\"{{::uniqueId}}-title\" role=\"heading\" aria-live=\"assertive\" aria-atomic=\"true\" type=\"button\" ng-disabled=\"datepickerMode === maxMode\" tabindex=\"-1\" style=\"width:100%;\"><strong>{{title}}</strong></button></th>\n" +
     "      <th><button type=\"button\" class=\"pull-right\" ng-click=\"move(1)\" tabindex=\"-1\"><i class=\"glyphicon glyphicon-chevron-right\"></i></button></th>\n" +
     "    </tr>\n" +
     "    <tr>\n" +
@@ -8212,7 +8212,7 @@ angular.module("template/datepicker/day.html", []).run(["$templateCache", functi
     "    <tr ng-repeat=\"row in rows track by $index\">\n" +
     "      <td ng-if=\"showWeeks\" class=\"text-center h6\"><em>{{ weekNumbers[$index] }}</em></td>\n" +
     "      <td ng-repeat=\"dt in row track by dt.date\" class=\"text-center\" role=\"gridcell\" id=\"{{::dt.uid}}\" ng-class=\"::dt.customClass\">\n" +
-    "        <button type=\"button\" style=\"min-width:100%;\" class=\"btn btn-default btn-sm\" ng-class=\"{'btn-info': dt.selected, active: isActive(dt)}\" ng-click=\"select(dt.date)\" ng-disabled=\"dt.disabled\" tabindex=\"-1\"><span ng-class=\"::{'text-muted': dt.secondary, 'text-info': dt.current}\">{{::dt.label}}</span></button>\n" +
+    "        <button type=\"button\" style=\"min-width:100%;\" class=\"datepicker-day-button\" ng-class=\"{'btn-info': dt.selected, active: isActive(dt)}\" ng-click=\"select(dt.date)\" ng-disabled=\"dt.disabled\" tabindex=\"-1\"><span ng-class=\"::{'text-muted': dt.secondary, 'text-info': dt.current}\">{{::dt.label}}</span></button>\n" +
     "      </td>\n" +
     "    </tr>\n" +
     "  </tbody>\n" +

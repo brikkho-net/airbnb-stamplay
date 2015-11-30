@@ -16,6 +16,21 @@ html, body {
     font-family: 'Lato', sans-serif;
 }
 
+select {
+  border: 1px solid #111;
+  background: white;
+  width: 150px;
+  padding-left: 10px;
+  font-size: 1.1em;
+  color: gray;
+  border: 1px solid lightgray;
+  height: 44px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
 /* home */
 .nav-header {
   padding: 20px;
@@ -74,12 +89,30 @@ html, body {
     border-radius: 2px;
     color: white;
     text-transform: capitalize;
-    font-size: 1.2em;    
+    font-size: 1.2em;
 }
 
 .home-hero-button:hover, .home-host-button:hover {
     cursor: pointer;
     background: rgba(0,0,0,0.3);
+}
+
+.home-search-button {
+  width: 120px;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 2px;
+  color: white;
+  text-transform: capitalize;
+  font-size: 1.2em;
+  border: rgba(255,126,130,1);
+  border-bottom: 1px solid rgba(250,0,8,1);
+  background: rgba(255,90,95,1);
+}
+
+.home-search-button:hover {
+  background: rgba(255,126,130,1);
+  cursor: pointer;
 }
 
 .home-host-button {
@@ -92,7 +125,7 @@ html, body {
     border-radius: 2px;
     color: white;
     font-size: 0.9em;
-    margin-top: 8px;    
+    margin-top: 8px;
 }
 
 .middle-container {
@@ -113,9 +146,10 @@ html, body {
     border: 1px solid white;
 }
 
-.dropdown-menu li div table:focus {
+.dropdown-menu li div table:focus, select:focus, button[role="heading"]:focus {
     outline: 0;
 }
+
 .input-group .form-control {
     border-right: 0px;
     -webkit-box-shadow: none;
@@ -129,3 +163,18 @@ html, body {
     width: 220px;
 }
 
+/* datepicker styling */
+button.pull-left, button.pull-right, button[role="heading"] {
+  background-color: white;
+  border: none;
+}
+
+button[role="heading"] {
+  cursor: auto;
+}
+.datepicker-day-button {
+  background-color: white;
+  border-right: 1px solid lightgray;
+  border-left: 0px;
+  border-bottom: 1px solid lightgray;
+}
