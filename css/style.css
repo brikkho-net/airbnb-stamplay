@@ -77,9 +77,22 @@ html, body {
     font-size: 1.2em;    
 }
 
-.home-hero-button:hover {
+.home-hero-button:hover, .home-host-button:hover {
     cursor: pointer;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.3);
+}
+
+.home-host-button {
+    height: 31px;
+    line-height: 28px;
+    width: 120px;
+    background: rgba(255,255,255,0);
+    border: 2px solid white;
+    text-align: center;
+    border-radius: 2px;
+    color: white;
+    font-size: 0.9em;
+    margin-top: 8px;    
 }
 
 .middle-container {
