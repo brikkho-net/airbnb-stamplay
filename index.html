@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./bower_components/bootswatch/cerulean/bootstrap.min.css">
     <link rel="stylesheet" href="./bower_components/angular-bootstrap/ui-bootstrap-csp.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./css/style.css">
 
     <script src="./bower_components/stamplay-js-sdk/dist/stamplay.min.js"></script>
@@ -18,10 +19,13 @@
 
     <!-- load our other JS dependencies -->
     <script src="./bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-stamplay/angular-stamplay.js"></script>
     <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="./bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script> -->
+
 
     <!-- load our angular components -->
     <script src="./app/components/home/home.js"></script>
@@ -45,6 +49,8 @@
 
 </head>
 <body ng-app="airbnb">
+
+  <div ui-view></div>
 
   <div ui-view name="nav"></div>
 

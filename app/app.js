@@ -2,6 +2,7 @@ angular.module('airbnb',
   [
     'ngStamplay',
     'ui.router',
+    'ngAnimate',
     'app.routes',
     'ui.bootstrap',
     'app.authenticate',
@@ -19,4 +20,5 @@ angular.module('airbnb',
 
   function MainCtrl() {
     var main = this;
+    console.log('main')
   }

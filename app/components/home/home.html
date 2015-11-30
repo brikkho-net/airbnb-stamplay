@@ -1,58 +1,75 @@
-<div class="flex-row">
-  <div class="flex-row flex-grow nav-header">
-    <div class="flex-row flex-grow">
-      <div class="logo-home-container"><img ng-src="../../img/airbnb-logo.png" alt="airbnb-logo" class="logo-home"></div>
-    </div>
-    <div class="flex-row nav-objects">
-
-      <div class="flex-column">
-        <div class="flex-row">
-          <div class="flex-column nav-title">Host</div>
-          <div class="flex-column"><i class="nav-icon ion-ios-home-outline"></i></div>
-        </div>
-      </div>
-
-      <div class="flex-column">
-        <div class="flex-row">
-          <div class="flex-column nav-title">Messages</div>
-          <div class="flex-column"><i class="nav-icon ion-ios-chatboxes-outline"></i></div>
-        </div>
-      </div>
-
-      <div class="flex-column">
-        <div class="flex-row">
-          <div class="flex-column nav-title">Help</div>
-          <div class="flex-column"><i class="nav-icon ion-help-buoy"></i></div>
-        </div>
-      </div>
-
-      <div class="flex-column">
-        <div class="flex-row">
-          <div class="flex-column nav-title">Ben</div>
-          <div class="flex-column"><i class="nav-icon ion-help-buoy"></i></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-<!--   <div class="flex-row central-header">
-  <div class="flex-row">
-    <div class="flex-row">WELCOME HOME</div>
-    <div class="flex-row">Rent unique places to stay from local hosts in 190+ countries.</div>
+<div class="flex-row nav-hero">
+  <div class="flex-column nav-hero-column">
     <div class="flex-row">
-      <div class="btn btn-primary">How It Works</div>
-    </div>
-  </div>
-</div> -->
+      
+      <div class="flex-row flex-grow nav-header">
+        <div class="flex-row flex-grow">
+          <div class="logo-home-container"><img ng-src="../../img/airbnb-logo.png" alt="airbnb-logo" class="logo-home"></div>
+        </div>
+        <div class="flex-row nav-objects">
 
-<!--   <div class="flex-row">
-  <div class="flex-row">
-    <div class="flex-column">Byron Bay, NSW</div>
-    <div class="flex-column">Check In</div>
-    <div class="flex-column">Check Out</div>
-    <div class="flex-column">1 Guest</div>
-    <div class="flex-column">Search</div>
+          <div class="flex-column">
+            <div class="flex-row">
+              <div class="flex-column nav-title">Host</div>
+              <div class="flex-column"><i class="nav-icon ion-ios-home-outline"></i></div>
+            </div>
+          </div>
+
+          <div class="flex-column">
+            <div class="flex-row">
+              <div class="flex-column nav-title">Messages</div>
+              <div class="flex-column"><i class="nav-icon ion-ios-chatboxes-outline"></i></div>
+            </div>
+          </div>
+
+          <div class="flex-column">
+            <div class="flex-row">
+              <div class="flex-column nav-title">Help</div>
+              <div class="flex-column"><i class="nav-icon ion-help-buoy"></i></div>
+            </div>
+          </div>
+
+          <div class="flex-column">
+            <div class="flex-row">
+              <div class="flex-column nav-title">Ben</div>
+              <div class="flex-column"><i class="nav-icon ion-help-buoy"></i></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-row flex-justify-center middle-container">
+      
+      <div class="flex-column">
+        <div class="flex-row flex-justify-center nav-welcome">welcome home</div>
+        <div class="flex-row flex-justify-center nav-rental">Rent unique places to stay from local hosts in 190+ countries.</div>
+        <div class="flex-row flex-justify-center nav-middle-button">
+          <div class="home-hero-button">how it works</div>
+        </div>
+      </div>
+
+    </div>  
+
+    <div class="flex-row flex-justify-center date-container">
+        <div class="">
+            <p class="input-group">
+              <input ng-focus="openLocationSearch($event)" placeholder="Where do you want to go?" type="text" class="form-control location-search-input"  />
+            </p>
+        </div>  
+        <div class="">
+            <p class="input-group">
+              <input ng-focus="openCheckIn($event)" placeholder="Check In" type="text" class="form-control" show-weeks="false" uib-datepicker-popup="{{format}}" ng-model="dtCheckIn" show-button-bar="false" is-open="status.openedCheckIn" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+            </p>
+        </div>  
+        <div class="">
+            <p class="input-group">
+              <input ng-focus="openCheckOut($event)" placeholder="Check Out" type="text" class="form-control" show-weeks="false" uib-datepicker-popup="{{format}}" ng-model="dtCheckOut" show-button-bar="false" is-open="status.openedCheckOut" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+            </p>
+        </div>  
+
+    </div>        
   </div>
-</div> -->
 </div>
+

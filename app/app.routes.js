@@ -9,10 +9,8 @@ function AppRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
   .state('home', {
     url: '/',
-    views: {
-      content: { templateUrl: 'app/components/home/home.html' }
-    },
-    controller: 'HomeCtrl as home'
+    controller: 'HomeCtrl as home',
+    templateUrl: 'app/components/home/home.html'
   })
 
   .state('room', {

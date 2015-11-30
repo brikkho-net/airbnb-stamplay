@@ -4,4 +4,5 @@ angular
 
 function NavCtrl() {
     var nav = this;
+    console.log('here nav')
 }
