@@ -13,7 +13,8 @@ angular.module('airbnb',
     'app.room',
     'UserService',
     'BookingService',
-    'RoomService'
+    'RoomService',
+    'google.places'
   ])
 
   .controller('MainCtrl', MainCtrl);

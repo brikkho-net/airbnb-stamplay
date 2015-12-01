@@ -53,10 +53,11 @@
 
     <div class="flex-row flex-justify-center date-container">
         <div class="">
-            <p class="input-group">
-              <input ng-focus="openLocationSearch($event)" placeholder="Where do you want to go?" type="text" class="form-control location-search-input"  />
+            <p class="input-group" id="locationField">
+              <input id="autocomplete" g-places-autocomplete ng-model="searchLocation" placeholder="Where do you want to go?" type="text" class="form-control location-search-input"  />
             </p>
         </div>
+
         <div>
             <p class="input-group">
               <input ng-focus="openCheckIn($event)" placeholder="Check In" type="text" class="form-control" show-weeks="false" uib-datepicker-popup="{{format}}" ng-model="dtCheckIn" show-button-bar="false" is-open="status.openedCheckIn" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
@@ -69,28 +70,13 @@
         </div>
 
         <div>
-          <select>
-              <option>1 Guest</option>
-              <option>2 Guests</option>
-              <option>3 Guests</option>
-              <option>4 Guests</option>
-              <option>5 Guests</option>
-              <option>6 Guests</option>
-              <option>7 Guests</option>
-              <option>8 Guests</option>
-              <option>9 Guests</option>
-              <option>10 Guests</option>
-              <option>11 Guests</option>
-              <option>12 Guests</option>
-              <option>13 Guests</option>
-              <option>14 Guests</option>
-              <option>15 Guests</option>
-              <option>16+ Guests</option>
+          <select ng-options="option.value as option.name for option in options track by option.id" ng-model="guests">
+              <option value="">Select guests</option>
           </select>
         </div>
 
-        <div class="">
-          <div class="home-search-button">search</div>
+        <div>
+          <div class="home-search-button" ng-click="search()">search</div>
         </div>
 
 
