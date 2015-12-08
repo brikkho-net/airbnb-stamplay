@@ -13,6 +13,12 @@ function AppRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
     templateUrl: 'app/components/home/home.html'
   })
 
+  .state('home-show', {
+    url: '/home-show',
+    controller: 'HomeShowCtrl as homeshow',
+    templateUrl: 'app/components/home-show/home-show.html'
+  })  
+
   .state('room', {
     url: '/room',
     views: {

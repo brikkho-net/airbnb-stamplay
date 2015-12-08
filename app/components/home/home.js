@@ -46,7 +46,7 @@ function HomeCtrl($scope) {
     startingDay: 1
   };
 
-  $scope.formats = ['dd-MM-yy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.formats = ['dd-MMMM-yy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
   $scope.format = $scope.formats[0];
 
   $scope.showCheckIn = function(date) {
