@@ -3,7 +3,6 @@ angular.module('app.routes', [])
 
 function AppRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
 
-  $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
@@ -12,6 +11,13 @@ function AppRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
     controller: 'HomeCtrl as home',
     templateUrl: 'app/components/home/home.html'
   })
+
+  $stateProvider
+  .state('homeSearchResults', {
+    url: '/search-results',
+    controller: 'HomeCtrl as home',
+    templateUrl: 'app/components/home/home-search-results.html'
+  })  
 
   .state('home-show', {
     url: '/home-show',

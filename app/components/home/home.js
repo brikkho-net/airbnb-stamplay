@@ -2,7 +2,7 @@ angular
     .module('app.home', [])
     .controller('HomeCtrl', HomeCtrl);
 
-function HomeCtrl($scope) {
+function HomeCtrl($scope, $state) {
 
     var home = this;
     home.open = open;
@@ -99,6 +99,7 @@ function HomeCtrl($scope) {
     console.log('check in: ',$scope.dtCheckIn)
     console.log('check out: ', $scope.dtCheckOut)
     console.log('guests: ', $scope.guests)
+    $state.go('homeSearchResults');
   }
 
   $scope.options = [
