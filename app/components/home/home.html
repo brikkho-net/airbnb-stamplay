@@ -4,13 +4,13 @@
 
       <div class="flex-row flex-grow nav-header">
         <div class="flex-row flex-grow">
-          <div class="logo-home-container"><img ng-src="../../img/airbnb-logo.png" alt="airbnb-logo" class="logo-home"></div>
+          <div class="logo-home-container"><img href="/#/" ng-src="../../img/equipmate-pointer-white.png" alt="airbnb-logo" class="logo-home"><span class="logo-text-white">equipmate</span></div>
         </div>
         <div class="flex-row nav-objects">
 
           <div class="flex-column">
             <div class="flex-row flex-justify-center">
-              <div class="home-host-button">Become a Host</div>
+              <div class="home-host-button"><span>Rent your equipment</span></div>
             </div>
           </div>
 
@@ -42,44 +42,56 @@
     <div class="flex-row flex-justify-center middle-container">
 
       <div class="flex-column">
-        <div class="flex-row flex-justify-center nav-welcome">welcome home</div>
-        <div class="flex-row flex-justify-center nav-rental">Rent unique places to stay from local hosts in 190+ countries.</div>
-        <div class="flex-row flex-justify-center nav-middle-button" ui-sref="home-show">
+        <div class="flex-row flex-justify-center nav-welcome">equipment hire - real simple</div>
+        <div class="flex-row flex-justify-center nav-rental">Hire from verified local equipment suppliers.</div>
+        <div class="flex-row flex-justify-center nav-middle-button">
           <div class="home-hero-button">how it works</div>
         </div>
       </div>
 
     </div>
 
-    <div class="flex-row flex-justify-center date-container">
-        <div class="">
-            <p class="input-group" id="locationField">
-              <input id="autocomplete" g-places-autocomplete ng-model="searchLocation" placeholder="Where do you want to go?" type="text" class="form-control location-search-input"  />
+    <div class="flex-row flex-justify-center date-container" ng-class="{ 'errors' : home.searchErrors }">
+        <div>
+            <p class="input-group" id="locationField" >
+              <input ng-focus="home.searchErrors = false" id="autocomplete" g-places-autocomplete ng-model="home.searchLocation" placeholder="I'm located in..." type="text" class="form-control location-search-input" />
             </p>
         </div>
 
         <div>
-            <p class="input-group">
-              <input ng-focus="openCheckIn($event)" placeholder="Check In" type="text" class="form-control" show-weeks="false" uib-datepicker-popup="{{format}}" ng-model="dtCheckIn" show-button-bar="false" is-open="status.openedCheckIn" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-            </p>
-        </div>
-        <div>
-            <p class="input-group">
-              <input ng-focus="openCheckOut($event)" placeholder="Check Out" type="text" class="form-control" show-weeks="false" uib-datepicker-popup="{{format}}" ng-model="dtCheckOut" show-button-bar="false" is-open="status.openedCheckOut" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-            </p>
-        </div>
-
-        <div>
-          <select ng-options="option.value as option.name for option in options track by option.id" ng-model="guests">
-              <option value="">Select guests</option>
+          <select ng-focus="home.searchErrors = false" ng-options="category.value as category.name for category in categories track by category.id" ng-model="home.category">
+              <option value="">I want to hire...</option>
           </select>
         </div>
 
+<!--         <div>
+    <p class="input-group">
+      <input ng-focus="openCheckIn($event)" placeholder="Check In" type="text" class="form-control" show-weeks="false" uib-datepicker-popup="{{format}}" ng-model="dtCheckIn" show-button-bar="false" is-open="status.openedCheckIn" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+    </p>
+</div>
+<div>
+    <p class="input-group">
+      <input ng-focus="openCheckOut($event)" placeholder="Check Out" type="text" class="form-control" show-weeks="false" uib-datepicker-popup="{{format}}" ng-model="dtCheckOut" show-button-bar="false" is-open="status.openedCheckOut" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+    </p>
+</div> -->
+
         <div>
-          <div class="home-search-button" ng-click="search()">search</div>
+          <div class="home-search-button" ng-click="home.search()">search</div>
         </div>
-
-
     </div>
   </div>
 </div>
+
+
+<!-- <div class="flex-row home-how-it-works">
+  <div class="flex-row">
+    <div class="flex-row flex-grow">image</div>
+    <div class="flex-row">
+      <div class="flex-column">
+        <div class="flex-row">test</div>
+        <div class="flex-row">test</div>
+        <div class="flex-row">test</div>
+      </div>
+    </div>
+  </div>
+</div> -->

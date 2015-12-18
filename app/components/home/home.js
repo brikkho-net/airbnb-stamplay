@@ -7,12 +7,19 @@ function HomeCtrl($scope, $state) {
     var home = this;
     home.open = open;
     home.today = today();
-
+    home.search = search;
+    home.searchErrors = false;
+    home.category = '';
+    home.searchLocation = '';
 
     function today() {
         home.dt = new Date();
     };
-    
+
+    function removeErrors() {
+      home.searchErrors = false;
+    }
+
 
   $scope.clear = function () {
     $scope.dt = null;
@@ -35,7 +42,7 @@ function HomeCtrl($scope, $state) {
 
   $scope.openCheckOut = function($event) {
     $scope.status.openedCheckOut = true;
-  };  
+  };
 
   $scope.setDate = function(year, month, day) {
     $scope.dt = new Date(year, month, day);
@@ -46,7 +53,7 @@ function HomeCtrl($scope, $state) {
     startingDay: 1
   };
 
-  $scope.formats = ['dd-MMMM-yy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
   $scope.format = $scope.formats[0];
 
   $scope.showCheckIn = function(date) {
@@ -94,41 +101,52 @@ function HomeCtrl($scope, $state) {
     return '';
   };
 
-  $scope.search = function() {
-    console.log('location: ', $scope.searchLocation)
-    console.log('check in: ',$scope.dtCheckIn)
-    console.log('check out: ', $scope.dtCheckOut)
-    console.log('guests: ', $scope.guests)
+  function search() {
+    console.log('location: ', home.searchLocation)
+    console.log('equip category: ', home.category)
+    if (home.searchLocation === '' || home.category === '') {
+      home.searchErrors = true;
+      return;
+    }
     $state.go('homeSearchResults');
   }
 
-  $scope.options = [
-    { id: 1, value: 1, name: '1 Guest' },
-    { id: 2, value: 2, name: '2 Guests' },
-    { id: 3, value: 3, name: '3 Guests' },
-    { id: 4, value: 4, name: '4 Guests' },
-    { id: 5, value: 5, name: '5 Guests' },
-    { id: 6, value: 6, name: '6 Guests' },
-    { id: 7, value: 7, name: '7 Guests' },
-    { id: 8, value: 8, name: '8 Guests' },
-    { id: 9, value: 9, name: '9 Guests' },
-    { id: 10, value: 10, name: '10 Guests' },
-    { id: 11, value: 11, name: '11 Guests' },
-    { id: 12, value: 12, name: '12 Guests' },
-    { id: 13, value: 13, name: '13 Guests' },
-    { id: 14, value: 14, name: '14 Guests' },
-    { id: 15, value: 15, name: '15 Guests' },
-    { id: 16, value: 16, name: '16+ Guests' }
+  $scope.categories = [
+    { id: 1, value: 1, name: 'Aerial Equipment' },
+    { id: 2, value: 2, name: 'Air Tools' },
+    { id: 3, value: 3, name: 'Compaction and Paving' },
+    { id: 4, value: 4, name: 'Concrete and Masonry' },
+    { id: 5, value: 5, name: 'Earthmoving' }
   ];
 
-  $scope.guest = $scope.options[0];
+  home.pieces = [
+    { id: 1, value: 1, name: '1 Piece' },
+    { id: 2, value: 2, name: '2 Pieces' },
+    { id: 3, value: 3, name: '3 Pieces' },
+    { id: 4, value: 4, name: '4 Pieces' },
+    { id: 5, value: 5, name: '5 Pieces' },
+    { id: 6, value: 6, name: '6 Pieces' },
+    { id: 7, value: 7, name: '7 Pieces' },
+    { id: 8, value: 8, name: '8 Pieces' },
+    { id: 9, value: 9, name: '9 Pieces' },
+    { id: 10, value: 10, name: '10+ Pieces' }
+  ];
+
+  home.piece = home.pieces[0];
+
+  home.results = [
+    { id: 1, name: 'Aerial Equipment', image: 'http://www.birents.com/itemimages/6076.jpg' },
+    { id: 2, name: 'Air Tools', image: 'http://www.birents.com/itemimages/6076.jpg' },
+    { id: 3, name: 'Compaction and Paving', image: 'http://www.birents.com/itemimages/6076.jpg' },
+    { id: 4, name: 'Concrete and Masonry', image: 'http://www.birents.com/itemimages/6076.jpg' },
+    { id: 5, name: 'Earthmoving', image: 'http://www.birents.com/itemimages/6076.jpg' },
+    { id: 6, name: 'Compaction and Paving', image: 'http://www.birents.com/itemimages/6076.jpg' },
+    { id: 7, name: 'Concrete and Masonry', image: 'http://www.birents.com/itemimages/6076.jpg' },
+    { id: 8, name: 'Concrete and Masonry', image: 'http://www.birents.com/itemimages/6076.jpg' },
+    { id: 9, name: 'Compaction and Paving', image: 'http://www.birents.com/itemimages/6076.jpg' },
+    { id: 10, name: 'Earthmoving', image: 'http://www.birents.com/itemimages/6076.jpg' }
+  ];
+
+  // $scope.category = $scope.categories[0];
 
 }
-
-
-
-
-
-
-
-

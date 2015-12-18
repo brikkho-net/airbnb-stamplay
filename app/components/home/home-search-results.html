@@ -1,14 +1,16 @@
 <div class="flex-column flex-grow">
   <div class="flex-row search-nav-row">
-    <div class="flex-row search-logo search-nav-item">
-      <img ng-src="../img/airbnb-logo.png" alt="airbnb-logo">
+    <div class="flex-row search-logo search-nav-item" ui-sref="home">
+      <div class="search-nav-inner">
+        <img ng-src="../img/equipmate-pointer-red.png" class="logo-results" alt="airbnb-logo">
+      </div>
     </div>
     <div class="flex-row flex-grow search-nav-input">
-      <input type="text">
+      <input class="search-input" type="text" placeholder="Search equipment">
     </div>
     <div class="flex-row search-nav-item">
-      <span>host</span>
-      <i class="ion-ios-home-outline"></i>
+      <span>List your equipment</span>
+      <i class="ion-android-bus"></i>
     </div>
     <div class="flex-row search-nav-item">
       <span>messages</span>
@@ -21,6 +23,64 @@
     <div class="flex-row search-nav-item">
       <span>ben</span>
       <i class="ion-person"></i>
+    </div>
+  </div>
+</div>
+
+
+<div class="flex-row main-results-section flex-justify-center">
+  <div class="flex-row search-inner-main-container">
+    <div class="flex-column flex-grow">
+      <div class="flex-row filter-row-container">
+        <div class="flex-row flex-grow filter-inner">
+          <div class="flex-row flex-grow search-dates-header">dates</div>
+          <div class="flex-row flex-grow flex-justify-right search-check-in">
+            <div>
+              <p class="input-group">
+                <input ng-focus="openCheckIn($event)" placeholder="Check In" type="text" class="form-control search-date-picker" show-weeks="false" uib-datepicker-popup="{{format}}" ng-model="dtCheckIn" show-button-bar="false" is-open="status.openedCheckIn" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              </p>
+            </div>
+          </div>
+          <div class="flex-row flex-grow">
+            <div>
+                <p class="input-group">
+                  <input ng-focus="openCheckOut($event)" placeholder="Check Out" type="text" class="form-control search-date-picker" show-weeks="false" uib-datepicker-popup="{{format}}" ng-model="dtCheckOut" show-button-bar="false" is-open="status.openedCheckOut" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                </p>
+            </div>
+          </div>
+          <div class="flex-row flex-grow">
+            <div>
+              <select ng-options="piece.value as piece.name for piece in home.pieces track by piece.id" ng-model="home.piece">
+                  <option value="">Quantity required</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-row" ng-init="rows = (home.results|splitrow:3)">
+        <div class="flex-column flex-grow">
+          <div ng-repeat="row in rows" class="flex-row flex-grow results-listings-row">
+            <div ng-repeat="result in row" class="col-md-4 result-tile-container">
+              <div class="flex-column">
+                <div class="flex-row result-image" ng-style="{'background-image':'url({{result.image}})'}"></div>
+                <div class="flex-row">{{ result.name }}</div>
+              </div>
+            </div>
+  <!--           <div class="col-md-4 result-tile-container">
+    <div class="flex-column">
+      <div class="flex-row result-image" ng-style="{'background-image':'url({{result.image}})'}"></div>
+      <div class="flex-row">test</div>
+    </div>
+  </div>
+  <div class="col-md-4 result-tile-container">
+    <div class="flex-column">
+      <div class="flex-row result-image"></div>
+      <div class="flex-row">test</div>
+    </div>
+  </div> -->
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
